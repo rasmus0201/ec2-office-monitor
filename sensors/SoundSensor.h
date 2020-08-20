@@ -14,10 +14,9 @@ namespace Bundsgaard
     {
         public:
             SoundSensor(PinName pin, int sleep);
-            bool Run(DataManager* manager);
+            bool Run(DataManager *manager);
             void SetName(std::string name);
             std::string GetName();
-            uint64_t GetSleepTimeout();
 
         private:
             AnalogIn sensor;

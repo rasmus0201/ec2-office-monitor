@@ -18,7 +18,7 @@ namespace Bundsgaard
             Rtc* GetRtc();
         
         public:
-            Collection* dataStore;
+            Collection dataStore;
 
         private:
             Rtc* rtc;

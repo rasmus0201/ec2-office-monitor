@@ -16,7 +16,7 @@ namespace Bundsgaard
             void Run();
             void Work();
             void AddSensorIn(SensorInterface* sensor);
-            std::vector<SensorInterface*>* GetSensorsIn();
+            std::vector<SensorInterface*> GetSensorsIn();
 
         private:
             Thread thread;

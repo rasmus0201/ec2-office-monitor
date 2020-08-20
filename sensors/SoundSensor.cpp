@@ -15,7 +15,9 @@ bool SoundSensor::Run(DataManager* manager)
     // el.type = "sound";
     // el.timestamp = manager->GetRtc()->GetTimestampMS();
     // el.value = (float)sensor.read_u16();
-    // manager->dataStore->Push(el);
+    // manager->dataStore.Push(el);
+
+    printf("SoundSensor::run()");
 
     return true;
 }
@@ -26,9 +28,4 @@ void SoundSensor::SetName(std::string name) {
 
 std::string SoundSensor::GetName() {
     return this->name;
-}
-
-uint64_t SoundSensor::GetSleepTimeout() {
-    printf("SoundSensor::GetSleepTimeout = %llu\n", this->sleepFor.count());
-    return this->sleepFor.count();
 }

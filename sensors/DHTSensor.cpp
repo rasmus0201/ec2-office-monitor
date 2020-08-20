@@ -23,26 +23,23 @@ bool DHTSensor::Run(DataManager* manager)
     // elTemp.type = "temperature";
     // elTemp.value = sensor.ReadTemperature(CELCIUS);
     // elTemp.timestamp = manager->GetRtc()->GetTimestampMS();
-    // manager->dataStore->Push(elTemp);
+    // manager->dataStore.Push(elTemp);
 
     // CollectionElement elHumid;
     // elHumid.type = "humidity";
     // elHumid.value = sensor.ReadHumidity();
     // elHumid.timestamp = manager->GetRtc()->GetTimestampMS();
-    // manager->dataStore->Push(elHumid);
+    // manager->dataStore.Push(elHumid);
+
+    printf("DHTSensor::run()");
 
     return true;
 }
 
-void DHTSensor::SetName(string name) {
+void DHTSensor::SetName(std::string name) {
     this->name = name;
 }
 
-string DHTSensor::GetName() {
+std::string DHTSensor::GetName() {
     return this->name;
-}
-
-uint64_t DHTSensor::GetSleepTimeout() {
-    printf("DHTSensor::GetSleepTimeout = %llu\n", this->sleepFor.count());
-    return this->sleepFor.count();
 }
