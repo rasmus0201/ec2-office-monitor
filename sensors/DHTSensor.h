@@ -21,6 +21,8 @@ namespace Bundsgaard
 
         private:
             DHT sensor;
+            std::string name;
+            std::chrono::milliseconds sleepFor;
     };
 }
 

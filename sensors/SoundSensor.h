@@ -4,7 +4,7 @@
 #include <string>
 #include "mbed.h"
 #include "SensorInterface.h"
-#include "DataManager.h" 
+#include "DataManager.h"
 
 using namespace Bundsgaard;
 
@@ -20,6 +20,8 @@ namespace Bundsgaard
 
         private:
             AnalogIn sensor;
+            std::string name;
+            std::chrono::milliseconds sleepFor;
     };
 }
 

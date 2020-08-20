@@ -20,6 +20,8 @@ namespace Bundsgaard
 
         private:
             AnalogIn sensor;
+            std::string name;
+            std::chrono::milliseconds sleepFor;
     };
 }
 

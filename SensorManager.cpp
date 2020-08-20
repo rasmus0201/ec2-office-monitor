@@ -25,8 +25,9 @@ void SensorManager::Work()
 {
     while(true) {
         printf("SensorManager::Work()\n");
+
         for (auto &sensor : this->GetSensorsIn()) {
-            printf("Name: %s\n", sensor->GetName().c_str());
+            sensor->Run(this->dataManager);
         }
 
         ThisThread::sleep_for(1000ms);

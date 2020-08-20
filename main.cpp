@@ -66,22 +66,18 @@ void setup()
     
     printf("Setting up sensors\n");
 
-    SoundSensor soundSensor(A0, 2100);
-    soundSensor.SetName(std::string("Sound"));
+    SoundSensor* soundSensor = new SoundSensor(A0, 2100);
+    soundSensor->SetName(std::string("Sound"));
 
-    LightSensor lightSensor(A1, 2200);
-    lightSensor.SetName(std::string("Light"));
+    LightSensor* lightSensor = new LightSensor(A1, 2200);
+    lightSensor->SetName(std::string("Light"));
 
-    DHTSensor dhtSensor(D4, 2300);
-    dhtSensor.SetName(std::string("DHT"));
+    DHTSensor* dhtSensor = new DHTSensor(D4, 2300);
+    dhtSensor->SetName(std::string("DHT"));
 
-    manager->AddSensorIn(&soundSensor);
-    manager->AddSensorIn(&lightSensor);
-    manager->AddSensorIn(&dhtSensor);
-
-    for (auto &sensor : manager->GetSensorsIn()) {
-        printf("Name: %s\n", sensor->GetName().c_str());
-    }
+    manager->AddSensorIn(soundSensor);
+    manager->AddSensorIn(lightSensor);
+    manager->AddSensorIn(dhtSensor);
 
     printf("Running manager\n");
     manager->Run();
